@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Бот для записи на услугу</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="booking">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand">
+        <span class="logo">М</span> Мята | Запись<span>Telegram-боты</span>
+      </div>
+      <div class="chat-layout">
+        <section class="chat-summary">
+          <div class="overline">TELEGRAM · ДЕМОНСТРАЦИЯ</div>
+          <h1>Бот для записи на услугу</h1>
+          <p>
+            Клиент выбирает свободное время, подтверждает визит и при необходимости отменяет запись.
+          </p>
+          <div class="badges">
+            <span>Свободные окна</span><span>Подтверждение</span><span>Отмена</span>
+          </div>
+        </section>
+        <section class="device" aria-label="Демонстрация чата">
+          <div class="chat-top">
+            <span class="logo">М</span>
+            <div><strong>Мята | Запись</strong><small>бот</small></div>
+            <span aria-hidden="true">•••</span>
+          </div>
+          <div class="thread">
+            <div class="chat-date">Сегодня</div>
+            <div class="bubble">
+              Выберите время для услуги <b>Стрижка и укладка</b>. Продолжительность 60 минут.
+            </div>
+            <div id="messages" aria-live="polite"></div>
+            <div id="controls">
+              <div id="slot-group" class="toolbar">
+                <button type="button" id="slot-1" class="chip" aria-pressed="false">11:00</button
+                ><button type="button" id="slot-2" class="chip" aria-pressed="false">14:30</button
+                ><button type="button" id="slot-3" class="chip" aria-pressed="false">17:00</button>
+              </div>
+              <button type="button" class="primary" id="action" disabled="">
+                Подтвердить запись
+              </button>
+            </div>
+            <div id="result" role="status" class="result" hidden=""></div>
+          </div>
+          <div class="chat-bottom">
+            <span aria-hidden="true">＋</span>
+            <div>Telegram · тестовый чат</div>
+            <span aria-hidden="true">➤</span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

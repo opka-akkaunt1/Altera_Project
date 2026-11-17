@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Автоматическая сводка продаж</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="report">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">П</span> Пульс<span>Автоматизация</span></div>
+      <div class="section-head">
+        <div class="overline">АНАЛИТИКА / ПРОДАЖИ</div>
+        <h1>Сводка продаж</h1>
+        <p>Продажи, количество заказов и средний чек по выбранному периоду.</p>
+      </div>
+      <div class="toolbar" id="period">
+        <button id="period-day" class="chip" aria-pressed="true">День</button
+        ><button id="period-week" class="chip" aria-pressed="false">Неделя</button
+        ><button type="button" class="primary" id="action">Сформировать сводку</button>
+      </div>
+      <div id="metrics" class="metrics">
+        <div class="metric"><span>Выручка</span><b>37&nbsp;000 ₽</b></div>
+        <div class="metric"><span>Заказы</span><b>7</b></div>
+        <div class="metric"><span>Средний чек</span><b>5&nbsp;286 ₽</b></div>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Динамика за семь дней</h2>
+          <div class="chart">
+            <div class="bar-col">
+              <strong>22 тыс.</strong>
+              <div class="bar" style="--bar: 66px"></div>
+              <span>Пн</span>
+            </div>
+            <div class="bar-col">
+              <strong>35 тыс.</strong>
+              <div class="bar" style="--bar: 105px"></div>
+              <span>Вт</span>
+            </div>
+            <div class="bar-col">
+              <strong>28 тыс.</strong>
+              <div class="bar" style="--bar: 84px"></div>
+              <span>Ср</span>
+            </div>
+            <div class="bar-col">
+              <strong>41 тыс.</strong>
+              <div class="bar" style="--bar: 123px"></div>
+              <span>Чт</span>
+            </div>
+            <div class="bar-col">
+              <strong>25 тыс.</strong>
+              <div class="bar" style="--bar: 75px"></div>
+              <span>Пт</span>
+            </div>
+            <div class="bar-col">
+              <strong>49 тыс.</strong>
+              <div class="bar" style="--bar: 147px"></div>
+              <span>Сб</span>
+            </div>
+            <div class="bar-col">
+              <strong>37 тыс.</strong>
+              <div class="bar" style="--bar: 111px"></div>
+              <span>Вс</span>
+            </div>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Сообщение для Telegram</h2>
+          <p id="report-hint">Сформируйте сводку, чтобы увидеть текст сообщения.</p>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

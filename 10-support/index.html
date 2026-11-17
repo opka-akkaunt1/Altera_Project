@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Помощник оператора поддержки</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="support">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand">
+        <span class="logo">✧</span> Линия поддержки<span>AI-решения</span>
+      </div>
+      <div class="section-head">
+        <div class="overline">ОБРАЩЕНИЕ #0421</div>
+        <h1>Помощник оператора поддержки</h1>
+        <p>Подготовка ответа и передача сложного обращения оператору.</p>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Входящее обращение</h2>
+          <label
+            >Тема<select id="topic">
+              <option>Доставка</option>
+              <option>Возврат</option>
+            </select></label
+          >
+          <div class="ticket">
+            <small>МАРИЯ П. · КЛИЕНТ</small>
+            <p id="request-body">
+              Заказ ещё не приехал, хотя доставка была назначена на вчера. Когда его привезут?
+            </p>
+          </div>
+          <button type="button" class="primary" id="action">Подготовить черновик ✦</button>
+        </section>
+        <section class="panel">
+          <h2>Рабочее место оператора</h2>
+          <p id="draft-hint">Выберите тему и подготовьте черновик.</p>
+          <div id="draft" hidden=""></div>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

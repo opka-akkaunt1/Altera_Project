@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Заявка с сайта в Битрикс24</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="bitrix">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">Б</span> Битрикс24<span>Интеграции</span></div>
+      <div class="section-head">
+        <div class="overline">ИНТЕГРАЦИИ / БИТРИКС24</div>
+        <h1>Заявка в Битрикс24</h1>
+        <p>Из формы сайта в карточку сделки. Демонстрация REST-запроса и обработки повтора.</p>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Заявка с сайта</h2>
+          <form id="bitrix-form">
+            <label
+              >Тема заявки<input
+                id="deal-title"
+                required=""
+                maxlength="100"
+                value="Сайт для студии Вектор" /></label
+            ><label
+              >Комментарий<input
+                id="deal-comment"
+                maxlength="180"
+                value="Оценить разработку сайта и подключение CRM" /></label
+            ><button class="primary" id="action">Создать тестовую сделку</button>
+          </form>
+        </section>
+        <section class="panel">
+          <h2>Данные REST-запроса</h2>
+          <p><code>POST crm.item.add</code> · Сделка, entityTypeId 2</p>
+          <pre class="payload" id="payload">
+{
+  "entityTypeId": 2,
+  "fields": {
+    "title": "Сайт для студии Вектор",
+    "sourceId": "WEB",
+    "comments": "Оценить разработку сайта и подключение CRM"
+  }
+}</pre
+          >
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

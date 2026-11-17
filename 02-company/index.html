@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Корпоративный сайт подрядчика</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="company">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="website">
+      <div class="webnav">
+        <span class="logo">К</span> <strong>КОНТУР</strong
+        ><span>Проектирование и строительство</span>
+      </div>
+      <section class="hero office">
+        <div class="hero-inner">
+          <div class="overline">АРХИТЕКТУРА И СТРОИТЕЛЬСТВО</div>
+          <h1>Пространства<br />для работы.</h1>
+          <p>Проектируем офисы, модернизируем здания и ведём объекты от обследования до сдачи.</p>
+          <button type="button" class="primary" id="action">Смотреть проект ↗</button>
+        </div>
+      </section>
+      <section class="services">
+        <article>
+          <b>Проектирование</b>
+          <p>Планировка, инженерные решения и рабочая документация.</p>
+        </article>
+        <article>
+          <b>Реконструкция</b>
+          <p>Обновление фасада и помещений действующего здания.</p>
+        </article>
+        <article>
+          <b>Управление стройкой</b>
+          <p>График, контроль работ и координация подрядчиков.</p>
+        </article>
+      </section>
+      <dialog id="project-detail">
+        <div class="project-photo office"></div>
+        <div class="dialog-copy">
+          <button id="close-dialog" class="quiet close" aria-label="Закрыть">×</button>
+          <div class="overline">КОММЕРЧЕСКИЙ ОБЪЕКТ</div>
+          <h2>Реконструкция офиса «Север»</h2>
+          <p>Концепция обновления входной группы и поэтапная реконструкция офисных этажей.</p>
+          <div class="badges">
+            <span>1 800 м² · тестовый объект</span><span>Фасад и инженерия</span>
+          </div>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>

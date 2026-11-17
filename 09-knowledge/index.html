@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ассистент по документам</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="knowledge">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">✦</span> База знаний<span>AI-решения</span></div>
+      <div class="section-head">
+        <div class="overline">ВНУТРЕННИЕ ДОКУМЕНТЫ</div>
+        <h1>Ассистент по документам</h1>
+        <p>Вопросы по регламентам с ответами и ссылками на источники.</p>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Поиск по базе знаний</h2>
+          <form id="question-form">
+            <label
+              >Вопрос<input
+                id="question"
+                placeholder="Что хотите узнать?"
+                required=""
+                maxlength="200"
+            /></label>
+            <div class="toolbar">
+              <button type="button" class="chip" id="example">Как согласовать отпуск?</button
+              ><button type="button" class="chip" id="remote">Как работать удалённо?</button>
+            </div>
+            <button class="primary" id="action">Найти ответ</button>
+          </form>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+        <section class="panel">
+          <h2>Подключённые документы</h2>
+          <ul class="doc-list">
+            <li>
+              <span class="file-icon">▤</span>
+              <div><b>Регламент отпусков</b><small>Раздел 2. Порядок согласования</small></div>
+            </li>
+            <li>
+              <span class="file-icon">▤</span>
+              <div><b>Правила удалённой работы</b><small>Раздел 3. График</small></div>
+            </li>
+            <li>
+              <span class="file-icon">▤</span>
+              <div><b>Памятка по расходам</b><small>Раздел 1. Подтверждение расходов</small></div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

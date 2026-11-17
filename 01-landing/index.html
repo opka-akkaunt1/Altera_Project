@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Лендинг студии интерьера</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="landing">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="website">
+      <div class="webnav">
+        <span class="logo">F</span> <strong>FORMA</strong><span>Студия интерьера</span>
+      </div>
+      <section class="hero interior">
+        <div class="hero-inner">
+          <div class="overline">ДИЗАЙН-СТУДИЯ FORMA</div>
+          <h1>Дома должно<br />быть хорошо.</h1>
+          <p>Проектируем тёплые, спокойные интерьеры для квартир и загородных домов.</p>
+          <a class="primary hero-cta" href="#consultation">Обсудить проект ↗</a>
+        </div>
+      </section>
+      <section class="services landing-services" aria-label="Что входит в проект">
+        <article>
+          <b>Планировка</b>
+          <p>Продумываем комнаты, хранение и маршруты на каждый день.</p>
+        </article>
+        <article>
+          <b>Визуализация</b>
+          <p>Показываем материалы, цвета и свет будущего интерьера.</p>
+        </article>
+        <article>
+          <b>Рабочие чертежи</b>
+          <p>Готовим планы для строителей и список материалов для закупки.</p>
+        </article>
+      </section>
+      <section id="consultation" class="conversion">
+        <div>
+          <div class="overline">ЗНАКОМСТВО</div>
+          <h2>Первая консультация</h2>
+          <p>Обсудим вашу планировку, стиль и бюджет.</p>
+        </div>
+        <div>
+          <form id="lead-form">
+            <div class="fields">
+              <label
+                >Имя<input
+                  id="lead-name"
+                  required=""
+                  placeholder="Например, Анна"
+                  autocomplete="off"
+                  maxlength="70" /></label
+              ><label
+                >Телефон<input
+                  id="lead-phone"
+                  type="tel"
+                  required=""
+                  placeholder="+7 900 000-00-00"
+                  autocomplete="off"
+                  inputmode="tel"
+                  maxlength="24"
+              /></label>
+            </div>
+            <button class="primary" id="action">Оставить заявку</button>
+          </form>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

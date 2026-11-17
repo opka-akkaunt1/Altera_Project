@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мониторинг репозитория через API</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+  </head>
+  <body>
+    <header class="portfolio-bar">
+      <a href="../index.html">← Все проекты</a><strong>GitHub API</strong>
+    </header>
+    <main>
+      <article class="casecopy">
+        <div class="overline">Интеграции / Демонстрационный проект</div>
+        <h1>Мониторинг репозитория через API</h1>
+        <p class="intro">Команде нужна компактная карточка публичного репозитория.</p>
+        <h2>Что реализовано</h2>
+        <p>
+          Подключил GitHub REST API, обработку ошибок и автономный тестовый ответ для презентаций.
+        </p>
+        <h2>Что показать клиенту</h2>
+        <p>
+          Введите публичный репозиторий и нажмите «Запросить GitHub API». Для просмотра без
+          интернета откройте тестовый ответ.
+        </p>
+        <div class="case-links">
+          <a class="primary" href="index.html">Открыть демо ↗</a
+          ><a href="01-screen.png">Начальный экран ↓</a><a href="02-result.png">Результат ↓</a>
+        </div>
+        <p class="footnote">
+          Доступны запрос к публичному API и автономный пример.
+          <a href="https://docs.github.com/en/rest/repos/repos#get-a-repository"
+            >Документация API ↗</a
+          >
+        </p>
+        <div class="case-gallery">
+          <figure>
+            <a href="01-screen.png"><img src="01-screen.png" alt="Начальный экран" /></a>
+            <figcaption>ввод репозитория.</figcaption>
+          </figure>
+          <figure>
+            <a href="02-result.png"><img src="02-result.png" alt="Результат действия" /></a>
+            <figcaption>пример полученных данных.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

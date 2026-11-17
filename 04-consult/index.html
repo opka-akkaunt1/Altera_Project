@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Бот для консультаций и заявок</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="consult">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">F</span> Форма Бот<span>Telegram-боты</span></div>
+      <div class="chat-layout">
+        <section class="chat-summary">
+          <div class="overline">TELEGRAM · ДЕМОНСТРАЦИЯ</div>
+          <h1>Бот для консультаций и заявок</h1>
+          <p>Клиент узнаёт детали услуги и оставляет контакты прямо в чате.</p>
+          <div class="badges"><span>Ответы на вопросы</span><span>Заявка менеджеру</span></div>
+        </section>
+        <section class="device" aria-label="Демонстрация чата">
+          <div class="chat-top">
+            <span class="logo">F</span>
+            <div><strong>Форма Бот</strong><small>бот</small></div>
+            <span aria-hidden="true">•••</span>
+          </div>
+          <div class="thread">
+            <div class="chat-date">Сегодня</div>
+            <div class="bubble">
+              Здравствуйте! Я помогу узнать, как проходит дизайн-проект, и передам запрос дизайнеру.
+            </div>
+            <div id="messages" aria-live="polite"></div>
+            <div id="controls">
+              <div class="toolbar">
+                <button type="button" class="secondary" id="faq">Что входит в проект?</button>
+              </div>
+              <form id="lead-form">
+                <div class="fields">
+                  <label
+                    >Имя<input
+                      id="lead-name"
+                      required=""
+                      placeholder="Например, Анна"
+                      autocomplete="off"
+                      maxlength="70" /></label
+                  ><label
+                    >Телефон<input
+                      id="lead-phone"
+                      type="tel"
+                      required=""
+                      placeholder="+7 900 000-00-00"
+                      autocomplete="off"
+                      inputmode="tel"
+                      maxlength="24"
+                  /></label>
+                </div>
+                <button class="primary" id="action">Отправить запрос</button>
+              </form>
+            </div>
+            <div id="result" role="status" class="result" hidden=""></div>
+          </div>
+          <div class="chat-bottom">
+            <span aria-hidden="true">＋</span>
+            <div>Telegram · тестовый чат</div>
+            <span aria-hidden="true">➤</span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Маршрутизация заявок</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="automation">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">F</span> Flowdesk<span>Автоматизация</span></div>
+      <div class="section-head">
+        <div class="overline">МАРШРУТЫ / НОВАЯ ЗАЯВКА</div>
+        <h1>Маршрутизация заявок</h1>
+        <p>Проверка контактов, регистрация заявки и уведомление ответственного.</p>
+      </div>
+      <div class="pipeline">
+        <div class="node">
+          <b>01</b>
+          <h3>Веб-форма</h3>
+          <p>Принять заявку</p>
+          <span class="step-state">Ожидает</span>
+        </div>
+        <div class="node">
+          <b>02</b>
+          <h3>Проверка</h3>
+          <p>Проверить поля</p>
+          <span class="step-state">Ожидает</span>
+        </div>
+        <div class="node">
+          <b>03</b>
+          <h3>CRM</h3>
+          <p>Создать запись</p>
+          <span class="step-state">Ожидает</span>
+        </div>
+        <div class="node">
+          <b>04</b>
+          <h3>Менеджер</h3>
+          <p>Подготовить уведомление</p>
+          <span class="step-state">Ожидает</span>
+        </div>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Тестовая заявка</h2>
+          <label>Компания<input id="company" value="Аркадия" /></label
+          ><label>Электронная почта<input id="email" type="email" value="demo@example.com" /></label
+          ><button type="button" class="primary" id="action">Запустить маршрут →</button>
+        </section>
+        <section class="panel">
+          <h2>Журнал обработки</h2>
+          <p id="log-hint">Запуски появятся здесь.</p>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

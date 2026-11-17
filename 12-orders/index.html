@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Панель управления заказами</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="orders">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand">
+        <span class="logo">Т</span> Такт<span>Разработка под задачу</span>
+      </div>
+      <div class="section-head">
+        <div class="overline">ОПЕРАЦИИ / ЗАКАЗЫ</div>
+        <h1>Управление заказами</h1>
+        <p>Список заказов, статусы и история изменений.</p>
+      </div>
+      <div class="work-grid orders-grid">
+        <section class="panel">
+          <h2>Заказы</h2>
+          <label>Поиск<input id="order-search" placeholder="Номер или имя клиента" /></label>
+          <div id="order-list">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">№ заказа</th>
+                    <th scope="col">Клиент</th>
+                    <th scope="col">Сумма</th>
+                    <th scope="col">Статус</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <button type="button" id="action" class="quiet order-link" data-order="1048">
+                        #1048
+                      </button>
+                    </td>
+                    <td>Анна Соколова</td>
+                    <td>12&nbsp;990 ₽</td>
+                    <td><span class="status" data-kind="new">Новый</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="quiet order-link" data-order="1047">
+                        #1047
+                      </button>
+                    </td>
+                    <td>Игорь Нестеров</td>
+                    <td>5&nbsp;890 ₽</td>
+                    <td><span class="status" data-kind="done">Готов</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="quiet order-link" data-order="1046">
+                        #1046
+                      </button>
+                    </td>
+                    <td>Лев Котов</td>
+                    <td>9&nbsp;450 ₽</td>
+                    <td><span class="status" data-kind="active">В работе</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button type="button" class="quiet order-link" data-order="1045">
+                        #1045
+                      </button>
+                    </td>
+                    <td>Мария Ким</td>
+                    <td>8&nbsp;190 ₽</td>
+                    <td><span class="status" data-kind="new">Новый</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Карточка заказа</h2>
+          <div id="order-card"><p>Выберите заказ из списка.</p></div>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

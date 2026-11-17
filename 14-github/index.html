@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мониторинг репозитория через API</title>
+    <link rel="stylesheet" href="../portfolio.css" />
+    <script defer src="../demo-helpers.js"></script>
+    <script defer src="interaction.js"></script>
+  </head>
+  <body data-theme="github">
+    <header class="topbar">
+      <nav class="top-inner" aria-label="Навигация по кейсам">
+        <a class="back" href="../index.html">← Все проекты</a
+        ><span class="demo-mark">Демонстрационный проект</span
+        ><a class="case-top" href="case.html">Карточка проекта ↗</a>
+      </nav>
+    </header>
+    <main class="experience">
+      <div class="app-brand"><span class="logo">GH</span> GitHub API<span>Интеграции</span></div>
+      <div class="section-head">
+        <div class="overline">ИНТЕГРАЦИИ / GITHUB REST API</div>
+        <h1>Мониторинг репозитория</h1>
+        <p>Карточка состояния публичного репозитория по данным GitHub.</p>
+      </div>
+      <div class="work-grid">
+        <section class="panel">
+          <h2>Источник данных</h2>
+          <form id="repo-form">
+            <label
+              >Публичный репозиторий<input
+                id="repo-name"
+                value="vercel/next.js"
+                required=""
+                maxlength="160"
+                placeholder="владелец/репозиторий" /></label
+            ><button class="primary" id="action">Запросить GitHub API ↗</button>
+          </form>
+          <div class="toolbar">
+            <button type="button" class="secondary" id="example">Показать тестовый ответ</button>
+          </div>
+          <p>Запрос открытых данных выполняется при нажатии.</p>
+        </section>
+        <section class="panel">
+          <h2>Карточка репозитория</h2>
+          <p id="repo-hint">Запросите данные по имени репозитория.</p>
+          <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
