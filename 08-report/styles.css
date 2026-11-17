@@ -1,0 +1,34 @@
+#period label {
+  margin: 0;
+}
+
+#period .primary {
+  align-self: flex-end;
+}
+
+#daily-chart {
+  overflow-x: auto;
+}
+
+#daily-chart[data-dense] {
+  justify-content: flex-start;
+}
+
+#daily-chart .bar-col {
+  flex: 0 0 auto;
+  min-width: 30px;
+}
+
+#download {
+  margin-top: 12px;
+}
+
+#comparison table {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 520px) {
+  #daily-chart .bar-col {
+    font-size: 0.68rem;
+  }
+}

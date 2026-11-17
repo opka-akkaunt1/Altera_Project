@@ -1,0 +1,54 @@
+.sales-offers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.sales-offers .offer {
+  grid-template-rows: auto 1fr auto auto;
+}
+
+.sales-offers .offer .secondary {
+  width: 100%;
+  padding-inline: 6px;
+}
+
+.sales-cart {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 12px;
+}
+
+.sales-cart h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.sales-cart p {
+  margin: 8px 0 0;
+}
+
+.sales-cart .cart-line span {
+  flex: 1;
+}
+
+.sales-cart .cart-line strong {
+  white-space: nowrap;
+}
+
+#payment-controls .primary {
+  margin-left: 0;
+}
+
+@media (max-width: 420px) {
+  .sales-offers .offer {
+    padding: 10px;
+  }
+
+  .sales-cart .cart-line {
+    flex-wrap: wrap;
+  }
+}
+

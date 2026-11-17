@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ассистент по документам</title>
     <link rel="stylesheet" href="../portfolio.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="../demo-helpers.js"></script>
     <script defer src="interaction.js"></script>
   </head>
@@ -17,11 +18,16 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">✦</span> База знаний<span>AI-решения</span></div>
+      <div class="app-brand">
+        <span class="logo">✦</span> База знаний<span>AI-решения</span>
+      </div>
       <div class="section-head">
         <div class="overline">ВНУТРЕННИЕ ДОКУМЕНТЫ</div>
         <h1>Ассистент по документам</h1>
-        <p>Вопросы по регламентам с ответами и ссылками на источники.</p>
+        <p>
+          Задайте вопрос по внутренним правилам. Демо покажет подходящие
+          выдержки из документов и ссылки на разделы, где можно сверить ответ.
+        </p>
       </div>
       <div class="work-grid">
         <section class="panel">
@@ -34,30 +40,47 @@
                 required=""
                 maxlength="200"
             /></label>
-            <div class="toolbar">
-              <button type="button" class="chip" id="example">Как согласовать отпуск?</button
-              ><button type="button" class="chip" id="remote">Как работать удалённо?</button>
+            <div class="toolbar" id="examples">
+              <button type="button" class="chip" id="example">
+                Как согласовать отпуск?
+              </button>
+              <button type="button" class="chip" id="remote">
+                Как работать удалённо?
+              </button>
+              <button type="button" class="chip" id="expenses">
+                Как подтвердить расходы?
+              </button>
             </div>
             <button class="primary" id="action">Найти ответ</button>
           </form>
           <div id="result" role="status" class="result" hidden=""></div>
         </section>
         <section class="panel">
-          <h2>Подключённые документы</h2>
-          <ul class="doc-list">
-            <li>
-              <span class="file-icon">▤</span>
-              <div><b>Регламент отпусков</b><small>Раздел 2. Порядок согласования</small></div>
-            </li>
-            <li>
-              <span class="file-icon">▤</span>
-              <div><b>Правила удалённой работы</b><small>Раздел 3. График</small></div>
-            </li>
-            <li>
-              <span class="file-icon">▤</span>
-              <div><b>Памятка по расходам</b><small>Раздел 1. Подтверждение расходов</small></div>
-            </li>
-          </ul>
+          <h2>Учебные документы</h2>
+          <article class="source-doc" id="leave-policy">
+            <h3>Регламент отпусков</h3>
+            <small>Раздел 2. Порядок согласования</small>
+            <p>
+              Подайте заявку руководителю за 14 дней до начала отпуска. После
+              согласования передайте её в отдел кадров.
+            </p>
+          </article>
+          <article class="source-doc" id="remote-policy">
+            <h3>Правила удалённой работы</h3>
+            <small>Раздел 3. График</small>
+            <p>
+              Согласуйте удалённый день с руководителем и отметьте его в общем
+              календаре команды.
+            </p>
+          </article>
+          <article class="source-doc" id="expense-policy">
+            <h3>Памятка по расходам</h3>
+            <small>Раздел 1. Подтверждение расходов</small>
+            <p>
+              В течение пяти рабочих дней прикрепите чек и краткое описание
+              расхода к заявке.
+            </p>
+          </article>
         </section>
       </div>
     </main>

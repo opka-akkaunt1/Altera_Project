@@ -1,0 +1,33 @@
+.catalog-tools {
+  max-width: 640px;
+  margin-top: 20px;
+}
+
+.catalog-tools label {
+  margin-bottom: 0;
+}
+
+#basket .cart-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+}
+
+#basket .cart-line label {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+#basket .cart-line input {
+  padding: 6px 8px;
+  max-width: 5rem;
+}
+
+#review-order {
+  margin-top: 12px;
+  width: 100%;
+}
+
+#basket .result ul {
+  padding-inline-start: 18px;
+}
+

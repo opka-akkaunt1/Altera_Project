@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Интернет-каталог электроники</title>
     <link rel="stylesheet" href="../portfolio.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="../demo-helpers.js"></script>
     <script defer src="interaction.js"></script>
   </head>
@@ -18,18 +19,47 @@
     </header>
     <main class="website">
       <div class="webnav">
-        <span class="logo">S</span> <strong>SOUNDROOM</strong><span>Каталог и корзина</span>
+        <span class="logo">S</span> <strong>SOUNDROOM</strong
+        ><span>Каталог и корзина</span>
       </div>
       <section class="store-head">
         <div>
           <div class="overline">ТЕХНИКА ДЛЯ ДОМА И РАБОТЫ</div>
           <h1>Каталог электроники</h1>
-          <p>Звук, клавиатуры и свет для вашего пространства.</p>
+          <p>
+            Найдите наушники, акустику или аксессуары по названию, сравните цены
+            и проверьте итоговую сумму в корзине.
+          </p>
         </div>
         <a class="secondary" href="#basket" id="cart-link">Корзина · 0</a>
       </section>
-      <div class="toolbar" id="filters">
-        <button type="button" class="chip" aria-pressed="true" data-category="Все товары">
+      <div class="fields catalog-tools">
+        <label
+          >Поиск по каталогу<input
+            id="catalog-search"
+            type="search"
+            placeholder="Например, Nova"
+        /></label>
+        <label
+          >Сортировка<select id="catalog-sort">
+            <option value="default">По умолчанию</option>
+            <option value="asc">Сначала дешевле</option>
+            <option value="desc">Сначала дороже</option>
+          </select></label
+        >
+      </div>
+      <div
+        class="toolbar"
+        id="filters"
+        role="group"
+        aria-label="Категории товаров"
+      >
+        <button
+          type="button"
+          class="chip"
+          aria-pressed="true"
+          data-category="Все товары"
+        >
           Все товары</button
         ><button
           type="button"
@@ -39,62 +69,104 @@
           id="action"
         >
           Наушники</button
-        ><button type="button" class="chip" aria-pressed="false" data-category="Акустика">
+        ><button
+          type="button"
+          class="chip"
+          aria-pressed="false"
+          data-category="Акустика"
+        >
           Акустика</button
-        ><button type="button" class="chip" aria-pressed="false" data-category="Аксессуары">
+        ><button
+          type="button"
+          class="chip"
+          aria-pressed="false"
+          data-category="Аксессуары"
+        >
           Аксессуары
         </button>
       </div>
       <div class="store-layout">
-        <div class="products" id="products">
-          <article class="product">
-            <div class="product-photo headphones" role="img" aria-label="Nova H1"></div>
-            <div class="product-copy">
-              <small>Наушники</small>
-              <h2>Nova H1</h2>
-              <div class="product-action">
-                <strong>8&nbsp;990 ₽</strong
-                ><button type="button" class="secondary" id="buy-nova">В корзину</button>
+        <div>
+          <p id="catalog-empty" class="panel" role="status" hidden>
+            Товары не найдены
+          </p>
+          <div class="products" id="products">
+            <article class="product" data-price="8990">
+              <div
+                class="product-photo headphones"
+                role="img"
+                aria-label="Nova H1"
+              ></div>
+              <div class="product-copy">
+                <small>Наушники</small>
+                <h2>Nova H1</h2>
+                <div class="product-action">
+                  <strong>8&nbsp;990 ₽</strong
+                  ><button type="button" class="secondary" id="buy-nova">
+                    В корзину
+                  </button>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product-photo speaker" role="img" aria-label="Pulse Mini"></div>
-            <div class="product-copy">
-              <small>Акустика</small>
-              <h2>Pulse Mini</h2>
-              <div class="product-action">
-                <strong>5&nbsp;490 ₽</strong
-                ><button type="button" class="secondary" id="buy-pulse">В корзину</button>
+            </article>
+            <article class="product" data-price="5490">
+              <div
+                class="product-photo speaker"
+                role="img"
+                aria-label="Pulse Mini"
+              ></div>
+              <div class="product-copy">
+                <small>Акустика</small>
+                <h2>Pulse Mini</h2>
+                <div class="product-action">
+                  <strong>5&nbsp;490 ₽</strong
+                  ><button type="button" class="secondary" id="buy-pulse">
+                    В корзину
+                  </button>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product-photo keyboard" role="img" aria-label="Type 67"></div>
-            <div class="product-copy">
-              <small>Аксессуары</small>
-              <h2>Type 67</h2>
-              <div class="product-action">
-                <strong>7&nbsp;590 ₽</strong
-                ><button type="button" class="secondary" id="buy-type">В корзину</button>
+            </article>
+            <article class="product" data-price="7590">
+              <div
+                class="product-photo keyboard"
+                role="img"
+                aria-label="Type 67"
+              ></div>
+              <div class="product-copy">
+                <small>Аксессуары</small>
+                <h2>Type 67</h2>
+                <div class="product-action">
+                  <strong>7&nbsp;590 ₽</strong
+                  ><button type="button" class="secondary" id="buy-type">
+                    В корзину
+                  </button>
+                </div>
               </div>
-            </div>
-          </article>
-          <article class="product">
-            <div class="product-photo lamp" role="img" aria-label="Beam Desk"></div>
-            <div class="product-copy">
-              <small>Аксессуары</small>
-              <h2>Beam Desk</h2>
-              <div class="product-action">
-                <strong>4&nbsp;190 ₽</strong
-                ><button type="button" class="secondary" id="buy-beam">В корзину</button>
+            </article>
+            <article class="product" data-price="4190">
+              <div
+                class="product-photo lamp"
+                role="img"
+                aria-label="Beam Desk"
+              ></div>
+              <div class="product-copy">
+                <small>Аксессуары</small>
+                <h2>Beam Desk</h2>
+                <div class="product-action">
+                  <strong>4&nbsp;190 ₽</strong
+                  ><button type="button" class="secondary" id="buy-beam">
+                    В корзину
+                  </button>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
         <aside id="basket" class="panel">
           <h2>Корзина</h2>
           <div id="basket-items"><p>Выберите товар из каталога.</p></div>
+          <button type="button" class="primary" id="review-order" hidden>
+            Сводка заказа
+          </button>
           <div id="result" role="status" class="result" hidden=""></div>
         </aside>
       </div>

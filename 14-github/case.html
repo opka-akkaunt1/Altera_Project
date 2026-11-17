@@ -8,40 +8,58 @@
   </head>
   <body>
     <header class="portfolio-bar">
-      <a href="../index.html">← Все проекты</a><strong>GitHub API</strong>
+      <a href="../index.html">← Все примеры</a><strong>GitHub API</strong>
     </header>
     <main>
       <article class="casecopy">
         <div class="overline">Интеграции / Демонстрационный проект</div>
         <h1>Мониторинг репозитория через API</h1>
-        <p class="intro">Команде нужна компактная карточка публичного репозитория.</p>
-        <h2>Что реализовано</h2>
-        <p>
-          Подключил GitHub REST API, обработку ошибок и автономный тестовый ответ для презентаций.
+        <p class="intro">
+          Для команды, которой нужно сравнить два открытых проекта перед выбором
+          инструмента. Данные о репозиториях и релизах собраны в одной таблице.
         </p>
-        <h2>Что показать клиенту</h2>
+        <h2>Что умеет решение</h2>
         <p>
-          Введите публичный репозиторий и нажмите «Запросить GitHub API». Для просмотра без
-          интернета откройте тестовый ответ.
+          Подключил GitHub REST API и вывел сравнение двух репозиториев, даты
+          публикации последних стабильных релизов, время обновления и обработку
+          ошибок.
+        </p>
+        <h2>Попробуйте в демо</h2>
+        <p>
+          Введите два публичных репозитория и нажмите «Запросить GitHub API».
+          Для просмотра без интернета откройте тестовый ответ с вымышленными
+          данными.
         </p>
         <div class="case-links">
-          <a class="primary" href="index.html">Открыть демо ↗</a
-          ><a href="01-screen.png">Начальный экран ↓</a><a href="02-result.png">Результат ↓</a>
+          <a class="primary" href="index.html">Попробовать демо ↗</a
+          ><a href="01-screen.png">Начальный экран ↓</a
+          ><a href="02-result.png">Результат ↓</a>
         </div>
         <p class="footnote">
           Доступны запрос к публичному API и автономный пример.
           <a href="https://docs.github.com/en/rest/repos/repos#get-a-repository"
-            >Документация API ↗</a
+            >Данные репозитория ↗</a
+          >
+          ·
+          <a
+            href="https://docs.github.com/en/rest/releases/releases#get-the-latest-release"
+            >Данные релиза ↗</a
           >
         </p>
         <div class="case-gallery">
           <figure>
-            <a href="01-screen.png"><img src="01-screen.png" alt="Начальный экран" /></a>
-            <figcaption>ввод репозитория.</figcaption>
+            <a href="01-screen.png"
+              ><img src="01-screen.png" alt="Начальный экран"
+            /></a>
+            <figcaption>два репозитория для сравнения.</figcaption>
           </figure>
           <figure>
-            <a href="02-result.png"><img src="02-result.png" alt="Результат действия" /></a>
-            <figcaption>пример полученных данных.</figcaption>
+            <a href="02-result.png"
+              ><img src="02-result.png" alt="Результат действия"
+            /></a>
+            <figcaption>
+              сравнение двух репозиториев на тестовых данных.
+            </figcaption>
           </figure>
         </div>
       </article>

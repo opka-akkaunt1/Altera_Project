@@ -18,17 +18,27 @@
     </header>
     <main class="website">
       <div class="webnav">
-        <span class="logo">F</span> <strong>FORMA</strong><span>Студия интерьера</span>
+        <span class="logo">F</span> <strong>FORMA</strong
+        ><span>Студия интерьера</span>
       </div>
       <section class="hero interior">
         <div class="hero-inner">
           <div class="overline">ДИЗАЙН-СТУДИЯ FORMA</div>
           <h1>Дома должно<br />быть хорошо.</h1>
-          <p>Проектируем тёплые, спокойные интерьеры для квартир и загородных домов.</p>
-          <a class="primary hero-cta" href="#consultation">Обсудить проект ↗</a>
+          <p>
+            Начните с консультации по интерьеру. Расскажите, что хотите
+            изменить, укажите площадь и бюджет, и проверьте заявку перед
+            отправкой.
+          </p>
+          <a class="primary hero-cta" href="#consultation"
+            >Обсудить проект ↗</a
+          >
         </div>
       </section>
-      <section class="services landing-services" aria-label="Что входит в проект">
+      <section
+        class="services landing-services"
+        aria-label="Что входит в проект"
+      >
         <article>
           <b>Планировка</b>
           <p>Продумываем комнаты, хранение и маршруты на каждый день.</p>
@@ -46,10 +56,42 @@
         <div>
           <div class="overline">ЗНАКОМСТВО</div>
           <h2>Первая консультация</h2>
-          <p>Обсудим вашу планировку, стиль и бюджет.</p>
+          <p>
+            Расскажите о помещении и бюджете. Проверьте заявку перед отправкой.
+          </p>
         </div>
         <div>
           <form id="lead-form">
+            <label
+              >Тип помещения
+              <select id="property-type" required>
+                <option value="">Выберите тип</option>
+                <option value="apartment">Квартира</option>
+                <option value="house">Дом</option>
+              </select>
+            </label>
+            <div class="fields">
+              <label
+                >Площадь, м²<input
+                  id="property-area"
+                  type="number"
+                  min="10"
+                  max="2000"
+                  step="1"
+                  required
+                  placeholder="86"
+              /></label>
+              <label
+                >Бюджет, ₽<input
+                  id="property-budget"
+                  type="number"
+                  min="1"
+                  max="1000000000"
+                  step="1"
+                  required
+                  placeholder="1250000"
+              /></label>
+            </div>
             <div class="fields">
               <label
                 >Имя<input
@@ -69,8 +111,41 @@
                   maxlength="24"
               /></label>
             </div>
-            <button class="primary" id="action">Оставить заявку</button>
+            <button class="primary" id="action">Проверить заявку</button>
           </form>
+          <section id="review" aria-labelledby="review-title" hidden>
+            <h3 id="review-title" tabindex="-1">Проверьте заявку</h3>
+            <dl class="brief-values">
+              <div>
+                <dt>Тип помещения</dt>
+                <dd id="review-type"></dd>
+              </div>
+              <div>
+                <dt>Площадь</dt>
+                <dd id="review-area"></dd>
+              </div>
+              <div>
+                <dt>Бюджет</dt>
+                <dd id="review-budget"></dd>
+              </div>
+              <div>
+                <dt>Имя</dt>
+                <dd id="review-name"></dd>
+              </div>
+              <div>
+                <dt>Телефон</dt>
+                <dd id="review-phone"></dd>
+              </div>
+            </dl>
+            <div class="toolbar">
+              <button id="edit-lead" type="button" class="secondary">
+                Изменить
+              </button>
+              <button id="submit-lead" type="button" class="primary">
+                Отправить
+              </button>
+            </div>
+          </section>
           <div id="result" role="status" class="result" hidden=""></div>
         </div>
       </section>

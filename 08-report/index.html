@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Автоматическая сводка продаж</title>
     <link rel="stylesheet" href="../portfolio.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="../demo-helpers.js"></script>
     <script defer src="interaction.js"></script>
   </head>
@@ -17,26 +18,67 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">П</span> Пульс<span>Автоматизация</span></div>
+      <div class="app-brand">
+        <span class="logo">П</span> Пульс<span>Автоматизация</span>
+      </div>
       <div class="section-head">
         <div class="overline">АНАЛИТИКА / ПРОДАЖИ</div>
         <h1>Сводка продаж</h1>
-        <p>Продажи, количество заказов и средний чек по выбранному периоду.</p>
+        <p>
+          Выберите даты и сравните выручку, число заказов и средний чек с
+          предыдущим периодом. Сводку можно выгрузить или посмотреть в формате
+          сообщения для Telegram.
+        </p>
       </div>
-      <div class="toolbar" id="period">
-        <button id="period-day" class="chip" aria-pressed="true">День</button
-        ><button id="period-week" class="chip" aria-pressed="false">Неделя</button
-        ><button type="button" class="primary" id="action">Сформировать сводку</button>
-      </div>
+      <form id="report-form">
+        <div class="toolbar" id="period">
+          <button
+            type="button"
+            id="period-day"
+            class="chip"
+            aria-pressed="false"
+          >
+            День
+          </button>
+          <button
+            type="button"
+            id="period-week"
+            class="chip"
+            aria-pressed="true"
+          >
+            Неделя
+          </button>
+          <label
+            >С<input
+              type="date"
+              id="from-date"
+              value="2026-11-09"
+              min="2026-11-02"
+              max="2026-11-15"
+              required
+          /></label>
+          <label
+            >По<input
+              type="date"
+              id="to-date"
+              value="2026-11-15"
+              min="2026-11-02"
+              max="2026-11-15"
+              required
+          /></label>
+          <button class="primary" id="action">Сформировать сводку</button>
+        </div>
+      </form>
       <div id="metrics" class="metrics">
-        <div class="metric"><span>Выручка</span><b>37&nbsp;000 ₽</b></div>
-        <div class="metric"><span>Заказы</span><b>7</b></div>
-        <div class="metric"><span>Средний чек</span><b>5&nbsp;286 ₽</b></div>
+        <div class="metric"><span>Выручка</span><b>237&nbsp;000 ₽</b></div>
+        <div class="metric"><span>Заказы</span><b>45</b></div>
+        <div class="metric"><span>Средний чек</span><b>5&nbsp;267 ₽</b></div>
       </div>
       <div class="work-grid">
         <section class="panel">
-          <h2>Динамика за семь дней</h2>
-          <div class="chart">
+          <h2>Выручка по дням</h2>
+          <p id="chart-range">09.11.2026–15.11.2026</p>
+          <div class="chart" id="daily-chart">
             <div class="bar-col">
               <strong>22 тыс.</strong>
               <div class="bar" style="--bar: 66px"></div>
@@ -73,11 +115,19 @@
               <span>Вс</span>
             </div>
           </div>
+          <section id="comparison" aria-live="polite">
+            <h3>Сравнение с предыдущим периодом</h3>
+            <p>02.11.2026–08.11.2026 · 198&nbsp;000 ₽ · 37 заказов</p>
+          </section>
         </section>
         <section class="panel">
-          <h2>Сообщение для Telegram</h2>
-          <p id="report-hint">Сформируйте сводку, чтобы увидеть текст сообщения.</p>
+          <h2>Предпросмотр для Telegram</h2>
+          <p id="report-hint">
+            Выберите даты с 2 по 15 ноября 2026 года. Сформируйте сводку, чтобы
+            увидеть текст и выгрузить данные.
+          </p>
           <div id="result" role="status" class="result" hidden=""></div>
+          <a class="secondary" id="download" hidden>Скачать CSV ↓</a>
         </section>
       </div>
     </main>

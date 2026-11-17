@@ -1,0 +1,10 @@
+.check-option input {
+  width: auto;
+  margin: 0 6px 0 0;
+  vertical-align: middle;
+  accent-color: var(--accent);
+}
+
+#retry {
+  margin-top: 12px;
+}

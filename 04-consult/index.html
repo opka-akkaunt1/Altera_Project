@@ -17,13 +17,21 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">F</span> Форма Бот<span>Telegram-боты</span></div>
+      <div class="app-brand">
+        <span class="logo">F</span> Форма Бот<span>Telegram-боты</span>
+      </div>
       <div class="chat-layout">
         <section class="chat-summary">
           <div class="overline">TELEGRAM · ДЕМОНСТРАЦИЯ</div>
           <h1>Бот для консультаций и заявок</h1>
-          <p>Клиент узнаёт детали услуги и оставляет контакты прямо в чате.</p>
-          <div class="badges"><span>Ответы на вопросы</span><span>Заявка менеджеру</span></div>
+          <p>
+            Дайте клиентам возможность выбрать услугу и задать вопрос в чате.
+            Менеджер получает контакты и переписку, чтобы продолжить разговор с
+            нужного места.
+          </p>
+          <div class="badges">
+            <span>Ответы на вопросы</span><span>Заявка менеджеру</span>
+          </div>
         </section>
         <section class="device" aria-label="Демонстрация чата">
           <div class="chat-top">
@@ -33,14 +41,29 @@
           </div>
           <div class="thread">
             <div class="chat-date">Сегодня</div>
-            <div class="bubble">
-              Здравствуйте! Я помогу узнать, как проходит дизайн-проект, и передам запрос дизайнеру.
+            <div class="bubble" id="greeting">
+              Здравствуйте! Выберите услугу, чтобы узнать подробности и
+              подготовить запрос дизайнеру.
             </div>
             <div id="messages" aria-live="polite"></div>
             <div id="controls">
+              <label for="consult-service">Услуга</label>
+              <select id="consult-service">
+                <option value="design">Дизайн-проект</option>
+                <option value="review">Разбор планировки</option>
+              </select>
               <div class="toolbar">
-                <button type="button" class="secondary" id="faq">Что входит в проект?</button>
+                <button type="button" class="secondary" id="faq">
+                  Что входит в проект?
+                </button>
               </div>
+              <div
+                id="follow-up"
+                class="toolbar"
+                role="group"
+                aria-label="Ответы на уточняющий вопрос"
+                hidden
+              ></div>
               <form id="lead-form">
                 <div class="fields">
                   <label

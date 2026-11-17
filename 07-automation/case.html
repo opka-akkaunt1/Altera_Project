@@ -8,38 +8,54 @@
   </head>
   <body>
     <header class="portfolio-bar">
-      <a href="../index.html">← Все проекты</a><strong>Flowdesk</strong>
+      <a href="../index.html">← Все примеры</a><strong>Flowdesk</strong>
     </header>
     <main>
       <article class="casecopy">
         <div class="overline">Автоматизация / Демонстрационный проект</div>
         <h1>Маршрутизация заявок</h1>
-        <p class="intro">Заявку нужно проверить, зарегистрировать и передать ответственному.</p>
-        <h2>Что реализовано</h2>
-        <p>
-          Собрал редактируемую тестовую заявку, цепочку обработки и журнал с результатом каждого
-          шага.
+        <p class="intro">
+          Для команды, которая вручную распределяет входящие заявки. Система
+          назначает ответственного и показывает, где остановилась обработка.
         </p>
-        <h2>Что показать клиенту</h2>
-        <p>Запустите маршрут. Можно очистить контакты и проверить обработку ошибки.</p>
+        <h2>Что умеет решение</h2>
+        <p>
+          Ответственный назначается по выбранной услуге. Маршрут проверяет дубли
+          по электронной почте и услуге. При сбое уведомления можно повторить
+          этот шаг для той же записи CRM.
+        </p>
+        <h2>Попробуйте в демо</h2>
+        <p>
+          Выберите «Интеграция с CRM», включите имитацию сбоя и запустите
+          маршрут. Повторите шаг 04, затем снова запустите маршрут с той же
+          заявкой, чтобы увидеть проверку дублей.
+        </p>
         <div class="case-links">
-          <a class="primary" href="index.html">Открыть демо ↗</a
-          ><a href="01-screen.png">Начальный экран ↓</a><a href="02-result.png">Результат ↓</a>
+          <a class="primary" href="index.html">Попробовать демо ↗</a
+          ><a href="01-screen.png">Начальный экран ↓</a
+          ><a href="02-result.png">Результат ↓</a>
         </div>
         <p class="footnote">
-          Проект работает в браузере на тестовых данных.
+          Записи и уведомления имитируются в браузере в пределах открытой
+          страницы.
           <a href="https://github.com/refaelcodes/lead-capture-crm-automation"
             >Сторонний аналог на GitHub ↗</a
           >
         </p>
         <div class="case-gallery">
           <figure>
-            <a href="01-screen.png"><img src="01-screen.png" alt="Начальный экран" /></a>
-            <figcaption>схема и входные данные.</figcaption>
+            <a href="01-screen.png"
+              ><img src="01-screen.png" alt="Начальный экран"
+            /></a>
+            <figcaption>Схема маршрута и тестовая заявка.</figcaption>
           </figure>
           <figure>
-            <a href="02-result.png"><img src="02-result.png" alt="Результат действия" /></a>
-            <figcaption>выполненные шаги и журнал.</figcaption>
+            <a href="02-result.png"
+              ><img src="02-result.png" alt="Результат действия"
+            /></a>
+            <figcaption>
+              Журнал обработки с назначенным ответственным.
+            </figcaption>
           </figure>
         </div>
       </article>

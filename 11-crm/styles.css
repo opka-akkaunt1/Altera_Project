@@ -1,0 +1,7 @@
+#sync-log {
+  overflow-wrap: anywhere;
+}
+
+#sync-log li + li {
+  margin-top: 5px;
+}

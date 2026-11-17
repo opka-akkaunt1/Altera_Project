@@ -17,33 +17,51 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">GH</span> GitHub API<span>Интеграции</span></div>
+      <div class="app-brand">
+        <span class="logo">GH</span> GitHub API<span>Интеграции</span>
+      </div>
       <div class="section-head">
         <div class="overline">ИНТЕГРАЦИИ / GITHUB REST API</div>
         <h1>Мониторинг репозитория</h1>
-        <p>Карточка состояния публичного репозитория по данным GitHub.</p>
+        <p>
+          Сравните два публичных проекта в одном окне. Демо показывает
+          показатели GitHub, дату последнего релиза и время получения данных.
+        </p>
       </div>
       <div class="work-grid">
         <section class="panel">
           <h2>Источник данных</h2>
           <form id="repo-form">
             <label
-              >Публичный репозиторий<input
+              >Первый репозиторий<input
                 id="repo-name"
                 value="vercel/next.js"
                 required=""
                 maxlength="160"
                 placeholder="владелец/репозиторий" /></label
-            ><button class="primary" id="action">Запросить GitHub API ↗</button>
+            ><label
+              >Второй репозиторий<input
+                id="repo-compare"
+                value="vitejs/vite"
+                required
+                maxlength="160"
+                placeholder="владелец/репозиторий" /></label
+            ><button type="submit" class="primary" id="action">
+              Запросить GitHub API ↗
+            </button>
           </form>
           <div class="toolbar">
-            <button type="button" class="secondary" id="example">Показать тестовый ответ</button>
+            <button type="button" class="secondary" id="example">
+              Показать тестовый ответ
+            </button>
           </div>
-          <p>Запрос открытых данных выполняется при нажатии.</p>
+          <p>Введите имя в формате «владелец/репозиторий».</p>
         </section>
         <section class="panel">
-          <h2>Карточка репозитория</h2>
-          <p id="repo-hint">Запросите данные по имени репозитория.</p>
+          <h2>Сравнение репозиториев</h2>
+          <p id="repo-hint">
+            Запросите данные GitHub или откройте тестовый пример без интернета.
+          </p>
           <div id="result" role="status" class="result" hidden=""></div>
         </section>
       </div>

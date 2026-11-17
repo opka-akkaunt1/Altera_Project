@@ -17,11 +17,17 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">Б</span> Битрикс24<span>Интеграции</span></div>
+      <div class="app-brand">
+        <span class="logo">Б</span> Битрикс24<span>Интеграции</span>
+      </div>
       <div class="section-head">
         <div class="overline">ИНТЕГРАЦИИ / БИТРИКС24</div>
         <h1>Заявка в Битрикс24</h1>
-        <p>Из формы сайта в карточку сделки. Демонстрация REST-запроса и обработки повтора.</p>
+        <p>
+          Проверьте, как заявка с сайта попадёт в нужную воронку Битрикс24. В
+          демо можно выбрать стадию и посмотреть, что произойдёт при отказе или
+          превышении лимита.
+        </p>
       </div>
       <div class="work-grid">
         <section class="panel">
@@ -37,8 +43,35 @@
               >Комментарий<input
                 id="deal-comment"
                 maxlength="180"
-                value="Оценить разработку сайта и подключение CRM" /></label
-            ><button class="primary" id="action">Создать тестовую сделку</button>
+                value="Оценить разработку сайта и подключение CRM"
+            /></label>
+            <div class="fields">
+              <label
+                >Воронка
+                <select id="deal-category">
+                  <option value="0">Основные продажи</option>
+                  <option value="2">Веб-проекты</option>
+                </select>
+              </label>
+              <label
+                >Стадия
+                <select id="deal-stage">
+                  <option value="NEW">Новая</option>
+                  <option value="PREPARATION">Подготовка</option>
+                </select>
+              </label>
+            </div>
+            <label
+              >Тестовый ответ
+              <select id="response-mode">
+                <option value="success">Успешная отправка</option>
+                <option value="denied">Отказ в доступе</option>
+                <option value="limited">Лимит запросов</option>
+              </select>
+            </label>
+            <button type="submit" class="primary" id="action">
+              Создать тестовую сделку
+            </button>
           </form>
         </section>
         <section class="panel">
@@ -49,6 +82,8 @@
   "entityTypeId": 2,
   "fields": {
     "title": "Сайт для студии Вектор",
+    "categoryId": 0,
+    "stageId": "NEW",
     "sourceId": "WEB",
     "comments": "Оценить разработку сайта и подключение CRM"
   }

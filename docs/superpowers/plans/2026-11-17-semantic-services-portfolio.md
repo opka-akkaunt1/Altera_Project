@@ -5,3 +5,5 @@
 3. Разместить услуги и порядок работы выше примеров.
 4. Проверить автономный лендинг, обработку повторной заявки Битрикс24 и живой ответ GitHub API.
 5. Переснять экраны, собрать ZIP и проверить публикацию выбранной версии.
+[[openspec/changes/semantic-services-portfolio/specs/services-portfolio/spec|Спецификация]] · [[openspec/changes/semantic-services-portfolio/tasks|Задачи]] · [[Документация|Оглавление]]
+

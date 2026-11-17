@@ -16,3 +16,5 @@
 ## Impact
 
 Изменяются статические страницы и исходники портфолио. Битрикс24 и остальные закрытые сервисы пока показаны на тестовых данных. GitHub использует публичный REST API.
+[[openspec/changes/semantic-services-portfolio/design|Проектирование]] · [[openspec/changes/semantic-services-portfolio/specs/services-portfolio/spec|Требования]] · [[openspec/changes/semantic-services-portfolio/tasks|Задачи]] · [[docs/superpowers/plans/2026-11-17-semantic-services-portfolio|План]] · [[Документация|Оглавление]]
+

@@ -1,0 +1,39 @@
+#classification {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 0 0 14px;
+}
+
+#classification dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+#classification dd {
+  margin: 4px 0 0;
+  font-weight: 700;
+}
+
+#queue-panel {
+  grid-column: 1 / -1;
+}
+
+#queue {
+  margin: 0;
+  padding-left: 25px;
+}
+
+#queue li + li {
+  margin-top: 12px;
+}
+
+#queue summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+#queue p {
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}

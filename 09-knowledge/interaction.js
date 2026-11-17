@@ -1,47 +1,44 @@
 (function initializeKnowledge() {
-  const { find, onClick, statusMessage, showResult } = window.PortfolioDemo;
+  const { find, statusMessage, showResult, escapeHtml, buttonMarkup } = window.PortfolioDemo;
+  const question = find('#question');
   const docs = [
-    {
-      label: 'Регламент отпусков',
-      terms: /отпуск|отгул/i,
-      text: 'Подайте заявку руководителю за 14 дней до начала отпуска. После согласования передайте её в отдел кадров.',
-      section: 'Раздел 2. Порядок согласования',
-    },
-    {
-      label: 'Правила удалённой работы',
-      terms: /удал[её]н|дом[ау]/i,
-      text: 'Согласуйте удалённый день с руководителем и отметьте его в общем календаре команды.',
-      section: 'Раздел 3. График',
-    },
-    {
-      label: 'Памятка по расходам',
-      terms: /расход|чек|командиров/i,
-      text: 'В течение пяти рабочих дней прикрепите чек и краткое описание расхода к заявке.',
-      section: 'Раздел 1. Подтверждение расходов',
-    },
+    { id: 'leave-policy', terms: /^(отпуск|отгул)/ },
+    { id: 'remote-policy', terms: /^(удален|дома$|дому$|гибрид)/ },
+    { id: 'expense-policy', terms: /^(расход|чек(?:а|и|ов|ом)?$|командиров)/ },
   ];
-  onClick('example', () => {
-    find('#question').value = 'Как согласовать отпуск?';
+
+  find('#examples').addEventListener('click', (event) => {
+    const example = event.target.closest('button');
+    if (example) {
+      question.value = example.textContent;
+      question.focus();
+    }
   });
-  onClick('remote', () => {
-    find('#question').value = 'Как работать удалённо?';
-  });
+
   find('#question-form').addEventListener('submit', (event) => {
     event.preventDefault();
-    const doc = docs.find((x) => x.terms.test(find('#question').value));
-    if (!doc) {
+    const words = question.value.toLowerCase().replaceAll('ё', 'е').match(/[а-я]+/g) || [];
+    const matches = docs.filter(({ terms }) => words.some((word) => terms.test(word)));
+    if (!matches.length) {
       showResult(
         statusMessage(
           'Подходящий документ не найден',
-          'Попробуйте спросить про отпуск, удалённую работу или расходы.',
-        ),
+          'Уточните тему вопроса. В учебной базе есть регламент отпусков, правила удалённой работы и памятка по расходам.',
+        ) + buttonMarkup('try-example', 'Попробовать вопрос об отпуске', 'secondary'),
         true,
       );
+      find('#try-example').addEventListener('click', () => find('#example').click());
       return;
     }
-    showResult(
-      statusMessage('Ответ по базе знаний', doc.text) +
-        `<details><summary>${doc.label} ↗</summary><p>${doc.section}. ${doc.text}</p></details>`,
-    );
+
+    const quotes = matches.map(({ id }) => {
+      const source = document.getElementById(id);
+      const text = escapeHtml(source.querySelector('p').textContent);
+      const name = escapeHtml(source.querySelector('h3').textContent);
+      const section = escapeHtml(source.querySelector('small').textContent);
+      return `<div class="source-quote"><blockquote>${text}</blockquote><a href="#${id}">${name} · ${section} ↗</a></div>`;
+    });
+
+    showResult(`<details open><summary>Ответ по базе знаний</summary>${quotes.join('')}</details>`);
   });
 })();

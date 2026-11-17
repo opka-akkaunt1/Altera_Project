@@ -12,3 +12,5 @@
 ## Future Work
 
 Подключение рабочих аккаунтов CRM и Telegram, хранение данных, идентификация пользователей, оплата и интеграции с AI добавляются по требованиям конкретного заказчика.
+[[openspec/changes/semantic-services-portfolio/proposal|Контекст]] · [[openspec/changes/semantic-services-portfolio/specs/services-portfolio/spec|Требования]] · [[openspec/changes/semantic-services-portfolio/tasks|Реализация]] · [[docs/superpowers/plans/2026-11-17-semantic-services-portfolio|План]] · [[Документация|Оглавление]]
+

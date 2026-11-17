@@ -1,0 +1,36 @@
+.source-doc {
+  border-top: 1px solid var(--line);
+  padding: 12px 6px;
+  scroll-margin-top: 80px;
+}
+
+.source-doc h3 {
+  margin: 0;
+}
+
+.source-doc small {
+  display: block;
+  color: var(--muted);
+  margin: 3px 0 7px;
+}
+
+.source-doc:target {
+  background: var(--tint);
+  border-radius: 8px;
+  outline: 1px solid var(--accent);
+}
+
+.source-quote {
+  margin-top: 12px;
+}
+
+.source-quote blockquote {
+  margin: 0 0 4px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+}
+
+.source-quote a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

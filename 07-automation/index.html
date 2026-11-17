@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Маршрутизация заявок</title>
     <link rel="stylesheet" href="../portfolio.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="../demo-helpers.js"></script>
     <script defer src="interaction.js"></script>
   </head>
@@ -17,11 +18,17 @@
       </nav>
     </header>
     <main class="experience">
-      <div class="app-brand"><span class="logo">F</span> Flowdesk<span>Автоматизация</span></div>
+      <div class="app-brand">
+        <span class="logo">F</span> Flowdesk<span>Автоматизация</span>
+      </div>
       <div class="section-head">
         <div class="overline">МАРШРУТЫ / НОВАЯ ЗАЯВКА</div>
         <h1>Маршрутизация заявок</h1>
-        <p>Проверка контактов, регистрация заявки и уведомление ответственного.</p>
+        <p>
+          Направляйте каждую заявку сотруднику, который отвечает за выбранную
+          услугу. Если один шаг завершится ошибкой, его можно повторить из
+          журнала.
+        </p>
       </div>
       <div class="pipeline">
         <div class="node">
@@ -33,7 +40,7 @@
         <div class="node">
           <b>02</b>
           <h3>Проверка</h3>
-          <p>Проверить поля</p>
+          <p>Проверить поля и дубли</p>
           <span class="step-state">Ожидает</span>
         </div>
         <div class="node">
@@ -45,21 +52,57 @@
         <div class="node">
           <b>04</b>
           <h3>Менеджер</h3>
-          <p>Подготовить уведомление</p>
+          <p>Уведомить ответственного</p>
           <span class="step-state">Ожидает</span>
         </div>
       </div>
       <div class="work-grid">
         <section class="panel">
           <h2>Тестовая заявка</h2>
-          <label>Компания<input id="company" value="Аркадия" /></label
-          ><label>Электронная почта<input id="email" type="email" value="demo@example.com" /></label
-          ><button type="button" class="primary" id="action">Запустить маршрут →</button>
+          <form id="route-form" novalidate>
+            <div class="fields">
+              <label
+                >Компания<input
+                  id="company"
+                  value="Аркадия"
+                  required
+                  maxlength="100"
+              /></label>
+              <label
+                >Электронная почта<input
+                  id="email"
+                  type="email"
+                  value="demo@example.com"
+                  required
+              /></label>
+            </div>
+            <label
+              >Услуга
+              <select id="service">
+                <option value="website">Разработка сайта</option>
+                <option value="integration">Интеграция с CRM</option>
+                <option value="assistant">AI-ассистент</option>
+              </select>
+            </label>
+            <label class="check-option"
+              ><span
+                ><input id="simulate-failure" type="checkbox" /> Имитировать
+                сбой уведомления</span
+              ></label
+            >
+            <button class="primary" id="action">Запустить маршрут →</button>
+          </form>
         </section>
         <section class="panel">
           <h2>Журнал обработки</h2>
-          <p id="log-hint">Запуски появятся здесь.</p>
+          <p id="log-hint">
+            Маршрут выполняется локально в браузере. Дубль определяется по почте
+            и услуге.
+          </p>
           <div id="result" role="status" class="result" hidden=""></div>
+          <button type="button" class="secondary" id="retry" hidden>
+            Повторить шаг 04
+          </button>
         </section>
       </div>
     </main>

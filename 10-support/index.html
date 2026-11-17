@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Помощник оператора поддержки</title>
     <link rel="stylesheet" href="../portfolio.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="../demo-helpers.js"></script>
     <script defer src="interaction.js"></script>
   </head>
@@ -21,32 +22,75 @@
         <span class="logo">✧</span> Линия поддержки<span>AI-решения</span>
       </div>
       <div class="section-head">
-        <div class="overline">ОБРАЩЕНИЕ #0421</div>
+        <div class="overline">ОЧЕРЕДЬ ПОДДЕРЖКИ</div>
         <h1>Помощник оператора поддержки</h1>
-        <p>Подготовка ответа и передача сложного обращения оператору.</p>
+        <p>
+          Вставьте обращение клиента. Демо определит тему и приоритет, предложит
+          черновик ответа и позволит передать его оператору на проверку.
+        </p>
       </div>
       <div class="work-grid">
         <section class="panel">
           <h2>Входящее обращение</h2>
-          <label
-            >Тема<select id="topic">
-              <option>Доставка</option>
-              <option>Возврат</option>
-            </select></label
-          >
-          <div class="ticket">
-            <small>МАРИЯ П. · КЛИЕНТ</small>
-            <p id="request-body">
-              Заказ ещё не приехал, хотя доставка была назначена на вчера. Когда его привезут?
-            </p>
-          </div>
-          <button type="button" class="primary" id="action">Подготовить черновик ✦</button>
+          <form id="support-form">
+            <label
+              >Текст обращения
+              <textarea id="request-body" rows="4" maxlength="600" required>
+Заказ ещё не приехал, хотя доставка была назначена на вчера. Когда его привезут?</textarea
+              >
+            </label>
+            <div
+              class="toolbar"
+              aria-label="Примеры обращений"
+              id="support-examples"
+            >
+              <button type="button" class="chip" id="delivery-example">
+                Задержка доставки
+              </button>
+              <button type="button" class="chip" id="refund-example">
+                Возврат заказа
+              </button>
+              <button type="button" class="chip" id="payment-example">
+                Двойное списание
+              </button>
+            </div>
+            <button class="primary" id="action">Подготовить черновик ✦</button>
+          </form>
         </section>
         <section class="panel">
           <h2>Рабочее место оператора</h2>
-          <p id="draft-hint">Выберите тему и подготовьте черновик.</p>
-          <div id="draft" hidden=""></div>
+          <p id="draft-hint">
+            Введите обращение или выберите пример. Здесь появятся тема,
+            срочность и черновик.
+          </p>
+          <div id="draft" hidden>
+            <dl id="classification" aria-live="polite">
+              <div>
+                <dt>Тема</dt>
+                <dd id="topic"></dd>
+              </div>
+              <div>
+                <dt>Срочность</dt>
+                <dd id="urgency"></dd>
+              </div>
+            </dl>
+            <label
+              >Черновик ответа<textarea
+                id="draft-text"
+                rows="4"
+                maxlength="1000"
+              ></textarea>
+            </label>
+            <button type="button" class="secondary" id="handoff">
+              Передать оператору
+            </button>
+          </div>
           <div id="result" role="status" class="result" hidden=""></div>
+        </section>
+        <section class="panel" aria-labelledby="queue-title" id="queue-panel">
+          <h2 id="queue-title">Очередь оператора</h2>
+          <p id="queue-hint">Обращений пока нет.</p>
+          <ol id="queue" hidden></ol>
         </section>
       </div>
     </main>

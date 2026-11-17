@@ -23,12 +23,42 @@
       <div class="section-head">
         <div class="overline">ОПЕРАЦИИ / ЗАКАЗЫ</div>
         <h1>Управление заказами</h1>
-        <p>Список заказов, статусы и история изменений.</p>
+        <p>
+          Держите заказы в одном списке. Создавайте их, распределяйте между
+          сотрудниками и смотрите, как менялись статус и ответственный.
+        </p>
       </div>
       <div class="work-grid orders-grid">
         <section class="panel">
           <h2>Заказы</h2>
-          <label>Поиск<input id="order-search" placeholder="Номер или имя клиента" /></label>
+          <div class="fields">
+            <label
+              >Поиск<input
+                id="order-search"
+                type="search"
+                placeholder="Номер или имя клиента"
+            /></label>
+            <label
+              >Статус
+              <select id="order-filter">
+                <option value="">Все статусы</option>
+                <option>Новый</option>
+                <option>В работе</option>
+                <option>Готов</option>
+              </select>
+            </label>
+          </div>
+          <div class="toolbar">
+            <button
+              type="button"
+              class="secondary"
+              id="new-order"
+              aria-expanded="false"
+              aria-controls="order-form"
+            >
+              Создать заказ
+            </button>
+          </div>
           <div id="order-list">
             <div class="table-wrap">
               <table>
@@ -43,7 +73,12 @@
                 <tbody>
                   <tr>
                     <td>
-                      <button type="button" id="action" class="quiet order-link" data-order="1048">
+                      <button
+                        type="button"
+                        id="action"
+                        class="quiet order-link"
+                        data-order="1048"
+                      >
                         #1048
                       </button>
                     </td>
@@ -53,7 +88,11 @@
                   </tr>
                   <tr>
                     <td>
-                      <button type="button" class="quiet order-link" data-order="1047">
+                      <button
+                        type="button"
+                        class="quiet order-link"
+                        data-order="1047"
+                      >
                         #1047
                       </button>
                     </td>
@@ -63,17 +102,27 @@
                   </tr>
                   <tr>
                     <td>
-                      <button type="button" class="quiet order-link" data-order="1046">
+                      <button
+                        type="button"
+                        class="quiet order-link"
+                        data-order="1046"
+                      >
                         #1046
                       </button>
                     </td>
                     <td>Лев Котов</td>
                     <td>9&nbsp;450 ₽</td>
-                    <td><span class="status" data-kind="active">В работе</span></td>
+                    <td>
+                      <span class="status" data-kind="active">В работе</span>
+                    </td>
                   </tr>
                   <tr>
                     <td>
-                      <button type="button" class="quiet order-link" data-order="1045">
+                      <button
+                        type="button"
+                        class="quiet order-link"
+                        data-order="1045"
+                      >
                         #1045
                       </button>
                     </td>
@@ -87,7 +136,31 @@
           </div>
         </section>
         <section class="panel">
-          <h2>Карточка заказа</h2>
+          <h2 id="card-title">Карточка заказа</h2>
+          <form id="order-form" hidden>
+            <label
+              >Имя клиента<input
+                id="order-customer"
+                autocomplete="off"
+                maxlength="80"
+                required
+            /></label>
+            <label
+              >Сумма, ₽<input
+                type="number"
+                id="order-total"
+                min="1"
+                max="99999999"
+                step="1"
+                required
+            /></label>
+            <button type="submit" class="primary" id="create-order">
+              Добавить заказ
+            </button>
+            <button type="button" class="quiet" id="cancel-order">
+              Отмена
+            </button>
+          </form>
           <div id="order-card"><p>Выберите заказ из списка.</p></div>
           <div id="result" role="status" class="result" hidden=""></div>
         </section>

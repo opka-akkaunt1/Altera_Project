@@ -14,3 +14,5 @@
 
 - [x] Опубликовать проверенный вариант на Sites.
 - [ ] Подтвердить доступ аудитории, выбранной владельцем.
+[[openspec/changes/semantic-services-portfolio/proposal|Контекст]] · [[openspec/changes/semantic-services-portfolio/specs/services-portfolio/spec|Критерии приёмки]] · [[docs/superpowers/plans/2026-11-17-semantic-services-portfolio|План]] · [[Документация|Оглавление]]
+
